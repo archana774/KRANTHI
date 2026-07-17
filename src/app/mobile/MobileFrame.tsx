@@ -79,7 +79,19 @@ function MobileHero() {
 
 
       {/* Spacer to push elements down and preserve layout */}
-      <div className="h-[200px] pointer-events-none" />
+      <div className="h-[120px] pointer-events-none" />
+
+      {/* College Info Text from Desktop */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+        className="relative z-10 w-full flex flex-col items-center mb-8 text-center"
+      >
+        <p className="font-['Orbitron',sans-serif] font-normal text-[#f5f7fa] text-[3vw] sm:text-[14px] leading-snug">INDIAN SOCIETY FOR TECHNICAL EDUCATION</p>
+        <p className="font-['Orbitron',sans-serif] font-normal text-[#f5f7fa] text-[2.5vw] sm:text-[12px] leading-snug mt-1">Government Engineering College Thrissur</p>
+        <p className="font-['Orbitron',sans-serif] font-normal text-[#f5f7fa] text-[2.5vw] sm:text-[12px] leading-snug mt-1">KE0001</p>
+      </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -90,6 +102,15 @@ function MobileHero() {
       >
         KRANTHI'26
       </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+        className="relative z-10 mt-6"
+      >
+        <GlassLabel className="!mx-auto !max-w-none scale-90 sm:scale-100">Welcome to KRANTHI'26</GlassLabel>
+      </motion.div>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -104,7 +125,7 @@ function MobileHero() {
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         className="relative font-['Orbitron',sans-serif] text-[#ef8ff6] text-[3.8vw] mt-3"
       >
-        13 JULY 2026 - 25 JULY 2025
+        20 JULY 2026 - 1 AUG 2026
       </motion.p>
 
       <motion.div
@@ -225,6 +246,7 @@ const eventCards = [
     mode: "📍 ECE Department",
     speaker: "🏆 Prize Pool: ₹1500",
     fee: "🎉 FREE REGISTRATION",
+    link: "https://forms.gle/mhEFdYK5fUqobBSz8",
   }
 ];
 
@@ -236,6 +258,7 @@ interface EventCardData {
   speaker: string;
   fee: string;
   image?: string;
+  link?: string;
 }
 
 function MobileEventCard({ card, index }: { card: EventCardData; index: number }) {
@@ -260,9 +283,14 @@ function MobileEventCard({ card, index }: { card: EventCardData; index: number }
           <p>{card.speaker}</p>
           <p className="leading-snug">{card.fee}</p>
         </div>
-        <button className="mt-3 w-full rounded-full bg-[rgba(42,35,110,0.35)] border border-white/10 py-3 font-['Orbitron',sans-serif] text-white text-[13px] active:scale-95 transition-transform">
+        <a 
+          href={card.link || "https://forms.gle/mhEFdYK5fUqobBSz8"} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="mt-3 block w-full text-center rounded-full bg-[rgba(42,35,110,0.35)] border border-white/10 py-3 font-['Orbitron',sans-serif] text-white text-[13px] active:scale-95 transition-transform"
+        >
           REGISTER NOW
-        </button>
+        </a>
       </div>
     </motion.div>
   );

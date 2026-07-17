@@ -850,7 +850,7 @@ export default function Frame() {
         transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
         className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron',sans-serif] font-normal h-[65px] leading-[normal] left-[719.5px] text-[#ef8ff6] text-[30px] text-center top-[657px] w-[739px]"
       >
-        13 JULY 2026-25 JULY 2025
+        20 JULY 2026-1 AUG 2026
       </motion.p>
       <motion.div
         initial={{ opacity: 0, x: -30 }}
