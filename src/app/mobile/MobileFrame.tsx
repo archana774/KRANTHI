@@ -103,14 +103,6 @@ function MobileHero() {
         KRANTHI'26
       </motion.h1>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-        className="relative z-10 mt-6"
-      >
-        <GlassLabel className="!mx-auto !max-w-none scale-90 sm:scale-100">Welcome to KRANTHI'26</GlassLabel>
-      </motion.div>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -119,6 +111,7 @@ function MobileHero() {
       >
         Through the Glass of Innovation
       </motion.p>
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -127,6 +120,15 @@ function MobileHero() {
       >
         20 JULY 2026 - 1 AUG 2026
       </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+        className="relative z-10 mt-6"
+      >
+        <GlassLabel className="!mx-auto !max-w-none scale-90 sm:scale-100">Welcome to KRANTHI'26</GlassLabel>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.97, y: 20 }}
@@ -143,6 +145,22 @@ function MobileHero() {
         />
         <div className="absolute inset-0 bg-[rgba(42,35,110,0.2)]" />
       </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.7 }}
+        className="relative z-10 mt-12 font-['Orbitron',sans-serif] text-white text-[15px] leading-relaxed tracking-wide text-center max-w-[440px] mx-auto"
+      >
+        KRANTHI'26 is the flagship technical fest of ISTE GECT, bringing
+        together innovators, creators, and problem-solvers through a series of
+        engaging workshops, technical competitions, and hands-on experiences.
+        Designed to inspire learning and foster innovation, KRANTHI serves as a
+        platform for students to explore emerging technologies, develop
+        practical skills, and showcase their talents in a dynamic and
+        collaborative environment.
+      </motion.p>
     </section>
   );
 }
@@ -180,36 +198,6 @@ function MobileAbout() {
     <section className="relative z-10 px-5 py-14">
       <GlassLabel>About KRANTHI'26</GlassLabel>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.7 }}
-        className="mt-8 font-['Orbitron',sans-serif] text-white text-[15px] leading-relaxed tracking-wide text-center max-w-[440px] mx-auto"
-      >
-        KRANTHI'26 is the flagship technical fest of ISTE GECT, bringing
-        together innovators, creators, and problem-solvers through a series of
-        engaging workshops, technical competitions, and hands-on experiences.
-        Designed to inspire learning and foster innovation, KRANTHI serves as a
-        platform for students to explore emerging technologies, develop
-        practical skills, and showcase their talents in a dynamic and
-        collaborative environment.
-      </motion.p>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.7, delay: 0.1 }}
-        className="mt-6 font-['Orbitron',sans-serif] text-white text-[15px] leading-relaxed tracking-wide text-center max-w-[440px] mx-auto"
-      >
-        KRANTHI 2026 is ISTE GECT's premier technical fest, featuring
-        workshops, expert sessions, competitions, and exciting fun events
-        organized across all nine departments. Designed to foster innovation,
-        collaboration, and skill development, KRANTHI brings together students
-        from diverse disciplines to learn, compete, and shape the future.
-      </motion.p>
-
       {/* Stats grid: 2x2 on phones, matches the four glass tiles on desktop */}
       <div className="relative mt-10 max-w-[420px] mx-auto z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#ef8ff6] opacity-25 blur-[70px] rounded-[100%] pointer-events-none -z-10 mix-blend-screen scale-110" />
@@ -233,6 +221,20 @@ function MobileAbout() {
         ))}
         </div>
       </div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+        className="mt-10 font-['Orbitron',sans-serif] text-white text-[15px] leading-relaxed tracking-wide text-center max-w-[440px] mx-auto"
+      >
+        KRANTHI 2026 is ISTE GECT's premier technical fest, featuring
+        workshops, expert sessions, competitions, and exciting fun events
+        organized across all nine departments. Designed to foster innovation,
+        collaboration, and skill development, KRANTHI brings together students
+        from diverse disciplines to learn, compete, and shape the future.
+      </motion.p>
     </section>
   );
 }
