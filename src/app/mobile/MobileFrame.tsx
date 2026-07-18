@@ -9,6 +9,7 @@ import imgKranthiPoster from "../../imports/Frame1/kranthi-about-poster.jpg";
 import imgRectangle35 from "../../imports/Frame1/eb58194fa5ddc18d5936b5417f313afe61eb4fa6.png";
 import imgEllipse7 from "../../imports/Frame1/1e9d098cb778eb196081c590c4afcc1fe0d6878b.png";
 import imgJurassicSparks from "../../assets/events/jurassic-sparks.jpg";
+import imgBreakingCode from "../../assets/breaking_code.jpg";
 import gallery1 from "../../assets/gallery/img1.jpg";
 import gallery2 from "../../assets/gallery/img2.jpg";
 import gallery3 from "../../assets/gallery/img3.jpg";
@@ -81,17 +82,7 @@ function MobileHero() {
       {/* Spacer to push elements down and preserve layout */}
       <div className="h-[120px] pointer-events-none" />
 
-      {/* College Info Text from Desktop */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-        className="relative z-10 w-full flex flex-col items-center mb-8 text-center"
-      >
-        <p className="font-['Orbitron',sans-serif] font-normal text-[#f5f7fa] text-[3vw] sm:text-[14px] leading-snug">INDIAN SOCIETY FOR TECHNICAL EDUCATION</p>
-        <p className="font-['Orbitron',sans-serif] font-normal text-[#f5f7fa] text-[2.5vw] sm:text-[12px] leading-snug mt-1">Government Engineering College Thrissur</p>
-        <p className="font-['Orbitron',sans-serif] font-normal text-[#f5f7fa] text-[2.5vw] sm:text-[12px] leading-snug mt-1">KE0001</p>
-      </motion.div>
+
 
       <motion.h1
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -249,6 +240,16 @@ const eventCards = [
     speaker: "🏆 Prize Pool: ₹1500",
     fee: "🎉 FREE REGISTRATION",
     link: "https://forms.gle/mhEFdYK5fUqobBSz8",
+  },
+  {
+    image: imgBreakingCode,
+    title: "BREAKING CODE",
+    sub: "-BY CSE X CHE FORUM",
+    date: "📅 21st July 2026",
+    mode: "📍 Annexe 102A | 4:30 PM",
+    speaker: "🏆 Prize Pool: ₹1.5K",
+    fee: "🎉 Free (GECians) | ₹30 (Others)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSerRUkpzcMHdH9Unh4FEF2nzXdRjzPhYlauxXOnFW0YGRXS5g/viewform",
   }
 ];
 

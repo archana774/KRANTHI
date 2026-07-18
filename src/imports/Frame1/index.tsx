@@ -12,6 +12,7 @@ import imgKranthiPoster from "./kranthi-about-poster.jpg";
 import imgRectangle35 from "./eb58194fa5ddc18d5936b5417f313afe61eb4fa6.png";
 import imgEllipse7 from "./1e9d098cb778eb196081c590c4afcc1fe0d6878b.png";
 import imgJurassicSparks from "../../assets/events/jurassic-sparks.jpg";
+import imgBreakingCode from "../../assets/breaking_code.jpg";
 import gallery1 from "../../assets/gallery/img1.jpg";
 import gallery2 from "../../assets/gallery/img2.jpg";
 import gallery3 from "../../assets/gallery/img3.jpg";
@@ -362,7 +363,7 @@ function Frame1() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
- className="absolute h-[273px] left-[505px] top-[2080px] w-[430px] transition-all duration-500 hover:scale-[1.05] hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(0,255,255,0.4)] hover:z-50 cursor-pointer overflow-hidden">
+ className="absolute h-[273px] left-[268px] top-[2080px] w-[430px] transition-all duration-500 hover:scale-[1.05] hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(0,255,255,0.4)] hover:z-50 cursor-pointer overflow-hidden">
       <div className="absolute h-[273px] left-0 top-0 w-[430px]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 430 273">
           <path d={svgPaths.p2045e480} fill="var(--fill-0, #090914)" fillOpacity="0.2" id="Rectangle 24" />
@@ -451,39 +452,40 @@ function Frame2() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
- className="absolute h-[273px] left-[505px] top-[2131px] w-[430px] transition-all duration-500 hover:scale-[1.05] hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(0,255,255,0.4)] hover:z-50 cursor-pointer overflow-hidden">
+ className="absolute h-[273px] left-[743px] top-[2080px] w-[430px] transition-all duration-500 hover:scale-[1.05] hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(0,255,255,0.4)] hover:z-50 cursor-pointer overflow-hidden">
       <div className="absolute h-[273px] left-0 top-0 w-[430px]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 430 273">
           <path d={svgPaths.p2045e480} fill="var(--fill-0, #090914)" fillOpacity="0.2" id="Rectangle 24" />
         </svg>
       </div>
       <div className="absolute h-[245px] left-[13px] pointer-events-none top-[14px] w-[196px]">
-        <img loading='lazy' decoding='async' alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgRectangle35} />
+        <img loading='lazy' decoding='async' alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgBreakingCode} />
         <div aria-hidden className="absolute border border-black border-solid inset-0" />
       </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron',sans-serif] h-[22px] leading-[normal] left-[321px] not-italic text-[12px] text-center text-white top-[29px] w-[192px]">MEET YOUR ALUMINI</p>
-      <p className="[word-break:break-word] absolute font-['Orbitron',sans-serif] h-[9px] leading-[normal] left-[227px] not-italic text-[7px] text-white top-[46px] w-[192px]">-BY CSE FORUM</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron',sans-serif] h-[22px] leading-[normal] left-[321px] not-italic text-[12px] text-center text-white top-[29px] w-[192px]">BREAKING CODE</p>
+      <p className="[word-break:break-word] absolute font-['Orbitron',sans-serif] h-[9px] leading-[normal] left-[227px] not-italic text-[7px] text-white top-[46px] w-[192px]">-BY CSE X CHE FORUM</p>
       <div className="[word-break:break-word] absolute font-['Orbitron',sans-serif] font-normal h-[19px] leading-[0] left-[225px] text-[12px] text-white top-[69px] w-[192px]">
         <p className="mb-0">
           <span className="leading-[16px]">{`📅 `}</span>
-          <span className="leading-[19px]">July 5 2026</span>
+          <span className="leading-[19px]">21st July 2026</span>
         </p>
         <p className="leading-[16px]">​</p>
       </div>
       <div className="[word-break:break-word] absolute font-['Orbitron',sans-serif] font-normal h-[19px] leading-[0] left-[227px] text-[12px] text-white top-[91px] w-[192px]">
-        <p className="leading-[16px] mb-0">💻 Online</p>
+        <p className="leading-[16px] mb-0">📍 Annexe 102A</p>
         <p className="leading-[16px]">​</p>
       </div>
       <div className="[word-break:break-word] absolute font-['Orbitron',sans-serif] font-normal h-[19px] leading-[0] left-[225px] text-[12px] text-white top-[113px] w-[192px]">
-        <p className="leading-[16px] mb-0">🎤 Speaker: Helmin Jinoz</p>
+        <p className="leading-[16px] mb-0">🏆 Prize Pool: ₹1.5K</p>
         <p className="leading-[16px]">​</p>
       </div>
       <div className="[word-break:break-word] absolute font-['Orbitron',sans-serif] font-normal h-[33px] leading-[0] left-[225px] text-[12px] text-white top-[135px] w-[192px]">
-        <p className="leading-[16px] mb-0">💰FREE For GECTIANS</p>
-        <p className="leading-[16px]">{`RS 30 For Other Colleges `}</p>
+        <p className="leading-[16px] mb-0">🎉 Free (GECians)</p>
+        <p className="leading-[16px]">{`₹30 (Others)`}</p>
       </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron',sans-serif] h-[22px] leading-[normal] left-[320px] not-italic text-[14px] text-center text-white top-[228px] w-[192px]">REGISTER NOW</p>
-      <div className="absolute bg-[rgba(42,35,110,0.2)] h-[38px] left-[230px] rounded-[51px] top-[215px] w-[181px]" />
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSerRUkpzcMHdH9Unh4FEF2nzXdRjzPhYlauxXOnFW0YGRXS5g/viewform" target="_blank" rel="noopener noreferrer" className="absolute flex items-center justify-center bg-[rgba(42,35,110,0.2)] h-[38px] left-[230px] rounded-[51px] top-[215px] w-[181px] hover:bg-[rgba(239,143,246,0.3)] transition-colors border border-transparent hover:border-[rgba(239,143,246,0.5)] z-20">
+        <p className="[word-break:break-word] font-['Orbitron',sans-serif] leading-[normal] m-0 not-italic text-[14px] text-center text-white">REGISTER NOW</p>
+      </a>
     </motion.div>
   );
 }
@@ -903,6 +905,7 @@ export default function Frame() {
         <p className="[word-break:break-word] font-['Orbitron',sans-serif] font-normal leading-[normal] text-[20px] text-white tracking-[2.4px] size-full">{`KRANTHI 2026 is ISTE GECT's premier technical fest, featuring workshops, expert sessions, competitions, and exciting fun events organized across all nine departments. Designed to foster innovation, collaboration, and skill development, KRANTHI brings together students from diverse disciplines to learn, compete, and shape the future.`}</p>
       </ScrollReveal>
         <Frame1 />
+        <Frame2 />
         {!HIDE_SPEAKERS && (
           <SpeakersCoverflow>
             <Frame8 />
