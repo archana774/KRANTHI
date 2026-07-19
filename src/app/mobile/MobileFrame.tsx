@@ -10,6 +10,7 @@ import imgRectangle35 from "../../imports/Frame1/eb58194fa5ddc18d5936b5417f313af
 import imgEllipse7 from "../../imports/Frame1/1e9d098cb778eb196081c590c4afcc1fe0d6878b.png";
 import imgJurassicSparks from "../../assets/events/jurassic-sparks.jpg";
 import imgBreakingCode from "../../assets/breaking_code.jpg";
+import imgBidToBuild from "../../assets/events/civil.jpeg";
 import gallery1 from "../../assets/gallery/img1.jpg";
 import gallery2 from "../../assets/gallery/img2.jpg";
 import gallery3 from "../../assets/gallery/img3.jpg";
@@ -250,6 +251,16 @@ const eventCards = [
     speaker: "🏆 Prize Pool: ₹1.5K",
     fee: "🎉 Free (GECians) | ₹30 (Others)",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSerRUkpzcMHdH9Unh4FEF2nzXdRjzPhYlauxXOnFW0YGRXS5g/viewform",
+  },
+  {
+    image: imgBidToBuild,
+    title: "BID TO BUILD",
+    sub: "-BY CIVIL FORUM",
+    date: "📅 July 21 2026",
+    mode: "📍 Classroom C6 | 4:30 PM",
+    speaker: "🏆 Open To: All",
+    fee: "🎉 Free (GECians) | ₹30 (Others)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSdxI-0bHepIEL_oORglxVc8ol6qX-Reko6_oz6A--CJavNbzw/viewform?usp=header",
   }
 ];
 
@@ -303,7 +314,7 @@ function MobileEvents() {
   return (
     <section className="relative z-10 px-5 py-14">
       <GlassLabel>EVENTS</GlassLabel>
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[440px] mx-auto">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[440px] md:max-w-[1000px] mx-auto">
         {eventCards.map((c, i) => (
           <MobileEventCard key={i} card={c} index={i} />
         ))}
