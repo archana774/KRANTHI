@@ -815,16 +815,14 @@ export default function Frame() {
       >
         KRANTHI'26
       </motion.h1>
-        <ParallaxBackground offset={80} className="absolute inset-10 pointer-events-none z-10">
-          <motion.div 
+        <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="pointer-events-auto relative"
+          className="pointer-events-auto"
         >
           <HeaderLogos />
         </motion.div>
-        </ParallaxBackground>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
