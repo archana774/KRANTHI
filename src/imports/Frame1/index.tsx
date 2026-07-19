@@ -24,6 +24,8 @@ import GlassCapsule from "../../app/components/GlassCapsule";
 import StatCounter from "../../app/components/StatCounter";
 import SpeakersCoverflow from "../../app/components/SpeakersCoverflow";
 import FAQAccordion from "../../app/components/FAQAccordion";
+import DesktopEventCard from "../../app/components/DesktopEventCard";
+import { eventCards } from "../../app/data/events";
 import HeroParticles from "../../app/components/HeroParticles";
 import ScrollReveal from "../../app/components/ScrollReveal";
 import GalleryCoverflow from "../../app/components/GalleryCoverflow";
@@ -710,9 +712,13 @@ const galleryImages = [
 
 export default function Frame() {
   const HIDE_SPEAKERS = true;
+  const rows = Math.ceil(eventCards.length / 2);
+  const eventsExtraHeight = Math.max(0, (rows - 1) * 377);
+  const totalOffset = eventsExtraHeight + (HIDE_SPEAKERS ? -542 : 0);
+
   return (
     <div className="bg-black relative size-full">
-      <div className="absolute bg-black h-[8060px] left-0 top-0 w-[1440px]" />
+      <div className="absolute bg-black left-0 top-0 w-[1440px]" style={{ height: `${5411 + totalOffset}px` }} />
       <div className="absolute h-[2309px] left-0 top-[763px] w-[1440px]">
         <img 
           loading='lazy' 
@@ -741,7 +747,7 @@ export default function Frame() {
           />
         </div>
       </div>
-      <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: HIDE_SPEAKERS ? 'translateY(-542px)' : 'none', transition: 'transform 0.5s ease' }}>
+      <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: `translateY(${totalOffset}px)`, transition: 'transform 0.5s ease' }}>
         <div className="pointer-events-auto">
           <div className="absolute flex h-[1220px] items-center justify-center left-[4px] top-[3974px] w-[1440px]">
             <div className="-scale-y-100 flex-none">
@@ -833,7 +839,7 @@ export default function Frame() {
       {!HIDE_SPEAKERS && (
         <GlassCapsule text="MEET THE SPEAKERS" left={381} top={2482} width={670} />
       )}
-      <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: HIDE_SPEAKERS ? 'translateY(-542px)' : 'none', transition: 'transform 0.5s ease' }}>
+      <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: `translateY(${totalOffset}px)`, transition: 'transform 0.5s ease' }}>
         <div className="pointer-events-auto">
           <GlassCapsule text="FREQUENTLY ASKED QUESTIONS" left={222} top={3024} width={999} />
           <GlassCapsule text="FIND US HERE" left={501} top={4324} width={441} />
@@ -906,9 +912,21 @@ export default function Frame() {
       <ScrollReveal className="absolute left-[250px] top-[1501px] w-[546px] h-[302px]" direction="up" delay={0.2}>
         <p className="[word-break:break-word] font-['Orbitron',sans-serif] font-normal leading-[normal] text-[20px] text-white tracking-[2.4px] size-full">{`KRANTHI 2026 is ISTE GECT's premier technical fest, featuring workshops, expert sessions, competitions, and exciting fun events organized across all nine departments. Designed to foster innovation, collaboration, and skill development, KRANTHI brings together students from diverse disciplines to learn, compete, and shape the future.`}</p>
       </ScrollReveal>
-        <Frame1 />
-        <Frame2 />
-        <Frame3 />
+        {eventCards.map((card, index) => {
+          const isCol1 = index % 2 === 0;
+          const left = isCol1 ? 275 : 735;
+          const rowIndex = Math.floor(index / 2);
+          const top = 2080 + rowIndex * 377;
+          return (
+            <DesktopEventCard 
+              key={index} 
+              {...card} 
+              left={left} 
+              top={top} 
+              delay={0.1 * (index + 1)} 
+            />
+          );
+        })}
         {!HIDE_SPEAKERS && (
           <SpeakersCoverflow>
             <Frame8 />
@@ -918,7 +936,7 @@ export default function Frame() {
             <Frame12 />
           </SpeakersCoverflow>
         )}
-      <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: HIDE_SPEAKERS ? 'translateY(-542px)' : 'none', transition: 'transform 0.5s ease' }}>
+      <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: `translateY(${totalOffset}px)`, transition: 'transform 0.5s ease' }}>
         <div className="pointer-events-auto">
           <FAQAccordion />
           <GalleryCoverflow images={galleryImages} />

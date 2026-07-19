@@ -8,9 +8,7 @@ import imgGecLogo2 from "../../imports/Frame1/82d51feb224dd91aae210a15c04fad096b
 import imgKranthiPoster from "../../imports/Frame1/kranthi-about-poster.jpg";
 import imgRectangle35 from "../../imports/Frame1/eb58194fa5ddc18d5936b5417f313afe61eb4fa6.png";
 import imgEllipse7 from "../../imports/Frame1/1e9d098cb778eb196081c590c4afcc1fe0d6878b.png";
-import imgJurassicSparks from "../../assets/events/jurassic-sparks.jpg";
-import imgBreakingCode from "../../assets/breaking_code.jpg";
-import imgBidToBuild from "../../assets/events/civil.jpeg";
+import { eventCards, EventCardData } from '../data/events';
 import gallery1 from "../../assets/gallery/img1.jpg";
 import gallery2 from "../../assets/gallery/img2.jpg";
 import gallery3 from "../../assets/gallery/img3.jpg";
@@ -231,49 +229,6 @@ function MobileAbout() {
   );
 }
 
-const eventCards = [
-  {
-    image: imgJurassicSparks,
-    title: "JURASSIC SPARKS",
-    sub: "-BY ECE FORUM",
-    date: "📅 July 20 2026",
-    mode: "📍 ECE Department",
-    speaker: "🏆 Prize Pool: ₹1500",
-    fee: "🎉 FREE REGISTRATION",
-    link: "https://forms.gle/mhEFdYK5fUqobBSz8",
-  },
-  {
-    image: imgBreakingCode,
-    title: "BREAKING CODE",
-    sub: "-BY CSE X CHE FORUM",
-    date: "📅 21st July 2026",
-    mode: "📍 Annexe 102A | 4:30 PM",
-    speaker: "🏆 Prize Pool: ₹1.5K",
-    fee: "🎉 Free (GECians) | ₹30 (Others)",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSerRUkpzcMHdH9Unh4FEF2nzXdRjzPhYlauxXOnFW0YGRXS5g/viewform",
-  },
-  {
-    image: imgBidToBuild,
-    title: "BID TO BUILD",
-    sub: "-BY CIVIL FORUM",
-    date: "📅 July 21 2026",
-    mode: "📍 Classroom C6 | 4:30 PM",
-    speaker: "🏆 Open To: All",
-    fee: "🎉 Free (GECians) | ₹30 (Others)",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSdxI-0bHepIEL_oORglxVc8ol6qX-Reko6_oz6A--CJavNbzw/viewform?usp=header",
-  }
-];
-
-interface EventCardData {
-  title: string;
-  sub: string;
-  date: string;
-  mode: string;
-  speaker: string;
-  fee: string;
-  image?: string;
-  link?: string;
-}
 
 function MobileEventCard({ card, index }: { card: EventCardData; index: number }) {
   return (
@@ -289,19 +244,26 @@ function MobileEventCard({ card, index }: { card: EventCardData; index: number }
         <div aria-hidden className="absolute inset-0 border border-black" />
       </div>
       <div className="p-4 flex flex-col gap-2">
-        <p className="font-['Orbitron',sans-serif] text-white text-[13px] text-center">{card.title}</p>
-        <p className="font-['Orbitron',sans-serif] text-white/70 text-[9px] text-center -mt-1">{card.sub}</p>
-        <div className="font-['Orbitron',sans-serif] text-white text-[11px] flex flex-col gap-1 mt-1">
-          <p>{card.date}</p>
-          <p>{card.mode}</p>
-          <p>{card.speaker}</p>
-          <p className="leading-snug">{card.fee}</p>
+        <p className="font-['Orbitron',sans-serif] text-white text-[13px] text-center font-bold tracking-wide uppercase">{card.title}</p>
+        <p className="font-['Orbitron',sans-serif] text-white/70 text-[9px] text-center -mt-1 uppercase">{card.sub}</p>
+        
+        <p className="font-sans font-light text-[11px] text-[#e0e5ed] mt-1 mb-2 leading-relaxed text-center min-h-[48px]">
+          {card.desc}
+        </p>
+
+        <div className="font-['Orbitron',sans-serif] text-white/90 text-[11px] flex flex-col gap-1.5 mt-1 text-left">
+          <div className="flex items-start gap-2"><span className="shrink-0 w-4">📅</span><span className="leading-snug">{card.date}</span></div>
+          <div className="flex items-start gap-2"><span className="shrink-0 w-4">⏰</span><span className="leading-snug">{card.time}</span></div>
+          <div className="flex items-start gap-2"><span className="shrink-0 w-4">📍</span><span className="leading-snug">{card.venue}</span></div>
+          {card.teamSize && <div className="flex items-start gap-2"><span className="shrink-0 w-4">👥</span><span className="leading-snug">{card.teamSize}</span></div>}
+          <div className="flex items-start gap-2"><span className="shrink-0 w-4">🏆</span><span className="leading-snug">{card.prize}</span></div>
+          <div className="flex items-start gap-2"><span className="shrink-0 w-4">🎟️</span><span className="leading-snug">{card.fee}</span></div>
         </div>
         <a 
           href={card.link || "https://forms.gle/mhEFdYK5fUqobBSz8"} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="mt-3 block w-full text-center rounded-full bg-[rgba(42,35,110,0.35)] border border-white/10 py-3 font-['Orbitron',sans-serif] text-white text-[13px] active:scale-95 transition-transform"
+          className="mt-3 block w-full text-center rounded-full bg-[rgba(42,35,110,0.35)] border border-white/10 py-3 font-['Orbitron',sans-serif] text-white text-[13px] active:scale-95 transition-all hover:bg-[rgba(239,143,246,0.3)] hover:border-[rgba(239,143,246,0.5)] z-20 relative pointer-events-auto"
         >
           REGISTER NOW
         </a>
@@ -314,7 +276,7 @@ function MobileEvents() {
   return (
     <section className="relative z-10 px-5 py-14">
       <GlassLabel>EVENTS</GlassLabel>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[440px] md:max-w-[1000px] mx-auto">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[440px] md:max-w-[1000px] mx-auto">
         {eventCards.map((c, i) => (
           <MobileEventCard key={i} card={c} index={i} />
         ))}

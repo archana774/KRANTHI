@@ -2,10 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import Frame from "../imports/Frame1/index";
 import MobileFrame from "./mobile/MobileFrame";
 import LenisProvider from "./components/LenisProvider";
+import { eventCards } from "./data/events";
 
 const DESIGN_WIDTH = 1440;
+
+const rows = Math.ceil(eventCards.length / 2);
+const eventsExtraHeight = Math.max(0, (rows - 1) * 377);
 const HIDE_SPEAKERS = true;
-const DESIGN_HEIGHT = HIDE_SPEAKERS ? 5411 - 542 : 5411;
+const totalOffset = eventsExtraHeight + (HIDE_SPEAKERS ? -542 : 0);
+const DESIGN_HEIGHT = 5411 + totalOffset;
 
 // Below this width we render a purpose-built mobile layout (MobileFrame)
 // instead of scaling down the fixed 1440px desktop canvas. This keeps text,
@@ -14,7 +19,6 @@ const DESIGN_HEIGHT = HIDE_SPEAKERS ? 5411 - 542 : 5411;
 const MOBILE_BREAKPOINT = 768;
 
 export default function App() {
-  // MARKER-MAKE-KIT-INVOKED
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   const [vw, setVw] = useState(
@@ -35,8 +39,6 @@ export default function App() {
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
-
-
 
   if (isMobile) {
     return (
@@ -63,7 +65,7 @@ export default function App() {
         <div
           style={{
             width: `${DESIGN_WIDTH}px`,
-            height: `${DESIGN_HEIGHT}px`,
+            minHeight: `100vh`,
             transformOrigin: "top left",
             transform: `scale(${scale})`,
             marginLeft: `${marginLeft}px`,
@@ -76,3 +78,4 @@ export default function App() {
     </LenisProvider>
   );
 }
+
