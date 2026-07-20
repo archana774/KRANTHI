@@ -2,6 +2,7 @@ import imgJurassicSparks from "../../assets/events/jurassic-sparks.jpg";
 import imgBreakingCode from "../../assets/breaking_code.jpg";
 import imgBidToBuild from "../../assets/events/civil.jpeg";
 import imgChem from "../../assets/events/chem.jpeg";
+import imgCircuitSprint from "../../assets/events/circuit-sprint.jpg";
 
 export interface EventCardData {
   title: string;
@@ -66,5 +67,17 @@ export const eventCards: EventCardData[] = [
     prize: "₹1,500",
     image: imgChem,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSfE7bvQHeY2I8KCIcm796uGVA5Ln8nn-hmd11M0uHquls2v8A/viewform?usp=dialog",
+  },
+  {
+    title: "CIRCUIT SPRINT",
+    sub: "-BY CPS FORUM",
+    desc: "NOW STREAMING: LIVE CODE",
+    date: "July 23, 2026",
+    time: "4:30 PM",
+    venue: "SDPK Hall, EC Dept",
+    fee: "Free (GECTians) | ₹30 (Others)",
+    prize: "₹1,500",
+    image: imgCircuitSprint,
+    link: "https://forms.gle/Tq6XswHkdtk8TeRT6",
   }
 ];

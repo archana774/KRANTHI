@@ -712,7 +712,7 @@ const galleryImages = [
 
 export default function Frame() {
   const HIDE_SPEAKERS = true;
-  const rows = Math.ceil(eventCards.length / 2);
+  const rows = Math.ceil(eventCards.length / 3);
   const eventsExtraHeight = Math.max(0, (rows - 1) * 377);
   const totalOffset = eventsExtraHeight + (HIDE_SPEAKERS ? -542 : 0);
 
@@ -911,10 +911,15 @@ export default function Frame() {
         <p className="[word-break:break-word] font-['Orbitron',sans-serif] font-normal leading-[normal] text-[20px] text-white tracking-[2.4px] size-full">{`KRANTHI 2026 is ISTE GECT's premier technical fest, featuring workshops, expert sessions, competitions, and exciting fun events organized across all nine departments. Designed to foster innovation, collaboration, and skill development, KRANTHI brings together students from diverse disciplines to learn, compete, and shape the future.`}</p>
       </ScrollReveal>
         {eventCards.map((card, index) => {
-          const isCol1 = index % 2 === 0;
-          const left = isCol1 ? 275 : 735;
-          const rowIndex = Math.floor(index / 2);
-          const top = 2080 + rowIndex * 377;
+          let left = 0;
+          let top = 0;
+          if (index < 3) {
+            left = 45 + index * (430 + 30);
+            top = 2080;
+          } else {
+            left = 275 + (index - 3) * (430 + 30);
+            top = 2080 + 377;
+          }
           return (
             <DesktopEventCard 
               key={index} 

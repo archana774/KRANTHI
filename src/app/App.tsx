@@ -6,7 +6,7 @@ import { eventCards } from "./data/events";
 
 const DESIGN_WIDTH = 1440;
 
-const rows = Math.ceil(eventCards.length / 2);
+const rows = Math.ceil(eventCards.length / 3);
 const eventsExtraHeight = Math.max(0, (rows - 1) * 377);
 const HIDE_SPEAKERS = true;
 const totalOffset = eventsExtraHeight + (HIDE_SPEAKERS ? -542 : 0);

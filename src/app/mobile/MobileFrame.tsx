@@ -237,7 +237,7 @@ function MobileEventCard({ card, index }: { card: EventCardData; index: number }
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6, delay: (index % 3) * 0.08 }}
-      className="rounded-[28px] bg-[#090914]/20 border border-white/5 overflow-hidden flex flex-col active:scale-[0.98] transition-transform"
+      className="h-full rounded-[28px] bg-[#090914]/20 border border-white/5 overflow-hidden flex flex-col active:scale-[0.98] transition-transform"
     >
       <div className="w-full aspect-[196/245] relative">
         <img loading="lazy" decoding="async" alt="" className="absolute inset-0 w-full h-full object-cover" src={card.image || imgRectangle35} />
@@ -276,9 +276,13 @@ function MobileEvents() {
   return (
     <section className="relative z-10 px-5 py-14">
       <GlassLabel>EVENTS</GlassLabel>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[440px] md:max-w-[1000px] mx-auto">
+      <div className="mt-8 flex flex-col md:flex-row md:flex-wrap md:justify-center gap-5 max-w-[440px] md:max-w-[1000px] mx-auto">
         {eventCards.map((c, i) => (
-          <MobileEventCard key={i} card={c} index={i} />
+          <div key={i} className="w-full md:w-[calc(50%-10px)] flex">
+            <div className="w-full h-full">
+              <MobileEventCard card={c} index={i} />
+            </div>
+          </div>
         ))}
       </div>
     </section>
