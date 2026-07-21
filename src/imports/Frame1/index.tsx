@@ -911,15 +911,9 @@ export default function Frame() {
         <p className="[word-break:break-word] font-['Orbitron',sans-serif] font-normal leading-[normal] text-[20px] text-white tracking-[2.4px] size-full">{`KRANTHI 2026 is ISTE GECT's premier technical fest, featuring workshops, expert sessions, competitions, and exciting fun events organized across all nine departments. Designed to foster innovation, collaboration, and skill development, KRANTHI brings together students from diverse disciplines to learn, compete, and shape the future.`}</p>
       </ScrollReveal>
         {eventCards.map((card, index) => {
-          let left = 0;
-          let top = 0;
-          if (index < 3) {
-            left = 45 + index * (430 + 30);
-            top = 2080;
-          } else {
-            left = 275 + (index - 3) * (430 + 30);
-            top = 2080 + 377;
-          }
+          const left = 45 + (index % 3) * (430 + 30);
+          const rowIndex = Math.floor(index / 3);
+          const top = 2080 + rowIndex * 377;
           return (
             <DesktopEventCard 
               key={index} 

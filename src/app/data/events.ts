@@ -3,6 +3,7 @@ import imgBreakingCode from "../../assets/breaking_code.jpg";
 import imgBidToBuild from "../../assets/events/civil.jpeg";
 import imgChem from "../../assets/events/chem.jpeg";
 import imgCircuitSprint from "../../assets/events/circuit-sprint.jpg";
+import imgCircuitSafari from "../../assets/events/circuit-safari.jpg";
 
 export interface EventCardData {
   title: string;
@@ -79,5 +80,17 @@ export const eventCards: EventCardData[] = [
     prize: "₹1,500",
     image: imgCircuitSprint,
     link: "https://forms.gle/Tq6XswHkdtk8TeRT6",
+  },
+  {
+    title: "CIRCUIT SAFARI",
+    sub: "-BY EEE FORUM",
+    desc: "Navigate through exciting circuit challenges and electrifying puzzles.",
+    date: "23rd & 24th July, 2026",
+    time: "4:30 PM",
+    venue: "EEE Dept",
+    fee: "Free (GECTians) | ₹30 (Others)",
+    prize: "₹1,500",
+    image: imgCircuitSafari,
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSd1mkcrq9abeMLmSzn3GtuVqgSVE1IbdulA6V5lDiXrrZStLA/viewform?usp=dialog",
   }
 ];
