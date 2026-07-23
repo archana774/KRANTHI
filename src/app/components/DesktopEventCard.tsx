@@ -3,22 +3,25 @@ import { EventCardData } from "../data/events";
 import svgPaths from "../../imports/Frame1/svg-45i862k53t";
 
 interface DesktopEventCardProps extends EventCardData {
-  left: number;
-  top: number;
-  delay: number;
+  left?: number;
+  top?: number;
+  delay?: number;
+  isMobile?: boolean;
 }
 
 export default function DesktopEventCard({
-  title, sub, desc, date, time, venue, teamSize, fee, prize, image, link, left, top, delay
+  title, sub, desc, date, time, venue, teamSize, fee, prize, image, link, left, top, delay, isMobile
 }: DesktopEventCardProps) {
+  const positioning = isMobile || (left === undefined && top === undefined) ? "relative" : "absolute";
+  
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: isMobile ? 30 : 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8, ease: "easeOut", delay }}
-      className="absolute h-[273px] w-[430px] transition-all duration-500 hover:scale-[1.05] hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(0,255,255,0.4)] hover:z-50 cursor-pointer overflow-hidden group"
-      style={{ left, top }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: delay || 0 }}
+      className={`${positioning} h-[273px] w-[430px] transition-all duration-500 hover:scale-[1.05] hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(0,255,255,0.4)] hover:z-50 cursor-pointer overflow-hidden group`}
+      style={positioning === "absolute" ? { left, top } : {}}
     >
       <div className="absolute h-[273px] left-0 top-0 w-[430px]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 430 273">

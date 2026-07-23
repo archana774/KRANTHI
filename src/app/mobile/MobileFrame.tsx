@@ -13,6 +13,8 @@ import imgChem from "../../assets/events/chem.jpeg";
 import imgCircuitSprint from "../../assets/events/circuit-sprint.jpg";
 import imgCircuitSafari from "../../assets/events/circuit-safari.jpg";
 import imgAlumni from "../../assets/events/alumni.jpg";
+import { eventCards } from "../data/events";
+import DesktopEventCard from "../components/DesktopEventCard";
 import { speakers } from "../data/speakers";
 import gallery1 from "../../assets/gallery/img1.jpg";
 import gallery2 from "../../assets/gallery/img2.jpg";
@@ -235,57 +237,15 @@ function MobileAbout() {
 }
 
 
-function MobileEventCard({ card, index }: { card: EventCardData; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.6, delay: (index % 3) * 0.08 }}
-      className="h-full rounded-[28px] bg-[#090914]/20 border border-white/5 overflow-hidden flex flex-col active:scale-[0.98] transition-transform"
-    >
-      <div className="w-full aspect-[196/245] relative">
-        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 w-full h-full object-cover" src={card.image || imgRectangle35} />
-        <div aria-hidden className="absolute inset-0 border border-black" />
-      </div>
-      <div className="p-4 flex flex-col gap-2">
-        <p className="font-['Orbitron',sans-serif] text-white text-[13px] text-center font-bold tracking-wide uppercase">{card.title}</p>
-        <p className="font-['Orbitron',sans-serif] text-white/70 text-[9px] text-center -mt-1 uppercase">{card.sub}</p>
-        
-        <p className="font-sans font-light text-[11px] text-[#e0e5ed] mt-1 mb-2 leading-relaxed text-center min-h-[48px]">
-          {card.desc}
-        </p>
-
-        <div className="font-['Orbitron',sans-serif] text-white/90 text-[11px] flex flex-col gap-1.5 mt-1 text-left">
-          <div className="flex items-start gap-2"><span className="shrink-0 w-4">📅</span><span className="leading-snug">{card.date}</span></div>
-          <div className="flex items-start gap-2"><span className="shrink-0 w-4">⏰</span><span className="leading-snug">{card.time}</span></div>
-          <div className="flex items-start gap-2"><span className="shrink-0 w-4">📍</span><span className="leading-snug">{card.venue}</span></div>
-          {card.teamSize && <div className="flex items-start gap-2"><span className="shrink-0 w-4">👥</span><span className="leading-snug">{card.teamSize}</span></div>}
-          <div className="flex items-start gap-2"><span className="shrink-0 w-4">🏆</span><span className="leading-snug">{card.prize}</span></div>
-          <div className="flex items-start gap-2"><span className="shrink-0 w-4">🎟️</span><span className="leading-snug">{card.fee}</span></div>
-        </div>
-        <a 
-          href={card.link || "https://forms.gle/mhEFdYK5fUqobBSz8"} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="mt-3 block w-full text-center rounded-full bg-[rgba(42,35,110,0.35)] border border-white/10 py-3 font-['Orbitron',sans-serif] text-white text-[13px] active:scale-95 transition-all hover:bg-[rgba(239,143,246,0.3)] hover:border-[rgba(239,143,246,0.5)] z-20 relative pointer-events-auto"
-        >
-          REGISTER NOW
-        </a>
-      </div>
-    </motion.div>
-  );
-}
-
 function MobileEvents() {
   return (
-    <section className="relative z-10 px-5 py-14">
+    <section className="relative z-10 px-5 py-14 overflow-hidden">
       <GlassLabel>EVENTS</GlassLabel>
-      <div className="mt-8 flex flex-col md:flex-row md:flex-wrap md:justify-center gap-5 max-w-[440px] md:max-w-[1000px] mx-auto">
+      <div className="mt-8 flex flex-col gap-6 max-w-[440px] mx-auto items-center">
         {eventCards.map((c, i) => (
-          <div key={i} className="w-full md:w-[calc(50%-10px)] flex">
-            <div className="w-full h-full">
-              <MobileEventCard card={c} index={i} />
+          <div key={i} className="relative w-full flex justify-center" style={{ height: '218px' }}>
+            <div style={{ transform: 'scale(0.8)', transformOrigin: 'top center', width: '430px' }} className="absolute top-0">
+              <DesktopEventCard {...c} isMobile={true} delay={i * 0.1} />
             </div>
           </div>
         ))}
@@ -301,7 +261,7 @@ function MobileSpeakers() {
     <section className="relative z-10 px-5 py-14">
       <GlassLabel>MEET THE SPEAKERS</GlassLabel>
       {/* Horizontal snap-scroll carousel: natural touch pattern for a row of cards on mobile */}
-      <div className="mt-8 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className={`mt-8 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${speakers.length === 1 ? 'justify-center' : ''}`}>
         {speakers.map((s, i) => (
           <motion.div
             key={i}
