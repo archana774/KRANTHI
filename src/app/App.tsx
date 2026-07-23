@@ -8,7 +8,7 @@ const DESIGN_WIDTH = 1440;
 
 const rows = Math.ceil(eventCards.length / 3);
 const eventsExtraHeight = Math.max(0, (rows - 1) * 377);
-const HIDE_SPEAKERS = true;
+const HIDE_SPEAKERS = false;
 const totalOffset = eventsExtraHeight + (HIDE_SPEAKERS ? -542 : 0);
 const DESIGN_HEIGHT = 5411 + totalOffset;
 

@@ -4,6 +4,7 @@ import imgBidToBuild from "../../assets/events/civil.jpeg";
 import imgChem from "../../assets/events/chem.jpeg";
 import imgCircuitSprint from "../../assets/events/circuit-sprint.jpg";
 import imgCircuitSafari from "../../assets/events/circuit-safari.jpg";
+import imgAlumni from "../../assets/events/alumni.jpg";
 
 export interface EventCardData {
   title: string;
@@ -92,5 +93,17 @@ export const eventCards: EventCardData[] = [
     prize: "₹1,500",
     image: imgCircuitSafari,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSd1mkcrq9abeMLmSzn3GtuVqgSVE1IbdulA6V5lDiXrrZStLA/viewform?usp=dialog",
+  },
+  {
+    title: "MEET YOUR ALUMNI",
+    sub: "-BY ISTE GECT INTERNSHIP CELL",
+    desc: "Interactive session with Shiva Duth M G (Former Engineer at MRF and HPCL).",
+    date: "July 25, 2026",
+    time: "7:00 PM",
+    venue: "Online mode",
+    fee: "Free (GECTians) | ₹30 (Others)",
+    prize: "N/A",
+    image: imgAlumni,
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfK5uKcXJqiCx_jbYLN3BDh2k_1E_Hmn6EBztyKHrsw35Pmsg/viewform?usp=publish-editor",
   }
 ];

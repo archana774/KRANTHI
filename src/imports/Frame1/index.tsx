@@ -14,6 +14,7 @@ import imgEllipse7 from "./1e9d098cb778eb196081c590c4afcc1fe0d6878b.png";
 import imgJurassicSparks from "../../assets/events/jurassic-sparks.jpg";
 import imgBreakingCode from "../../assets/breaking_code.jpg";
 import imgBidToBuild from "../../assets/events/civil.jpeg";
+
 import gallery1 from "../../assets/gallery/img1.jpg";
 import gallery2 from "../../assets/gallery/img2.jpg";
 import gallery3 from "../../assets/gallery/img3.jpg";
@@ -631,10 +632,10 @@ function Frame8({ className }: { className?: string }) {
         </svg>
       </div>
       <div className="absolute left-[69px] size-[100px] top-[18px]">
-        <img loading='lazy' decoding='async' alt="" className="absolute block inset-0 max-w-none size-full" height="100" src={imgEllipse7} width="100" />
+        <img loading='lazy' decoding='async' alt="" className="absolute block inset-0 max-w-none size-full rounded-full object-cover" height="100" src={imgShivaDuth} width="100" />
       </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron',sans-serif] h-[22px] leading-[normal] left-[119px] not-italic text-[12px] text-center text-white top-[139px] w-[192px]">NAME</p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron',sans-serif] h-[22px] leading-[normal] left-[119px] not-italic text-[10px] text-center text-white top-[161px] w-[192px]">POSITION</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron',sans-serif] h-[22px] leading-[normal] left-[119px] not-italic text-[12px] text-center text-white top-[139px] w-[192px]">Shiva Duth M G</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Orbitron',sans-serif] h-[22px] leading-[normal] left-[119px] not-italic text-[10px] text-center text-[#ef8ff6] top-[161px] w-[192px]">MBA IIM AHMADABAD</p>
     </div>
   );
 }
@@ -711,7 +712,7 @@ const galleryImages = [
 ];
 
 export default function Frame() {
-  const HIDE_SPEAKERS = true;
+  const HIDE_SPEAKERS = false;
   const rows = Math.ceil(eventCards.length / 3);
   const eventsExtraHeight = Math.max(0, (rows - 1) * 377);
   const totalOffset = eventsExtraHeight + (HIDE_SPEAKERS ? -542 : 0);
@@ -835,7 +836,12 @@ export default function Frame() {
             <GlassCapsule text="About KRANTHI'26" left={423} top={1345} width={606} />
       <GlassCapsule text="EVENTS" left={569} top={1956} width={301} />
       {!HIDE_SPEAKERS && (
-        <GlassCapsule text="MEET THE SPEAKERS" left={381} top={2482} width={670} />
+        <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: `translateY(${eventsExtraHeight}px)`, transition: 'transform 0.5s ease' }}>
+          <div className="pointer-events-auto">
+            <GlassCapsule text="MEET THE SPEAKERS" left={381} top={2482} width={670} />
+            <SpeakersCoverflow />
+          </div>
+        </div>
       )}
       <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: `translateY(${totalOffset}px)`, transition: 'transform 0.5s ease' }}>
         <div className="pointer-events-auto">
@@ -911,9 +917,28 @@ export default function Frame() {
         <p className="[word-break:break-word] font-['Orbitron',sans-serif] font-normal leading-[normal] text-[20px] text-white tracking-[2.4px] size-full">{`KRANTHI 2026 is ISTE GECT's premier technical fest, featuring workshops, expert sessions, competitions, and exciting fun events organized across all nine departments. Designed to foster innovation, collaboration, and skill development, KRANTHI brings together students from diverse disciplines to learn, compete, and shape the future.`}</p>
       </ScrollReveal>
         {eventCards.map((card, index) => {
-          const left = 45 + (index % 3) * (430 + 30);
-          const rowIndex = Math.floor(index / 3);
+          let rowIndex = 0;
+          let colIndex = 0;
+          let rowCards = 3;
+
+          if (index < 2) {
+            rowIndex = 0;
+            colIndex = index;
+            rowCards = 2;
+          } else if (index < 5) {
+            rowIndex = 1;
+            colIndex = index - 2;
+            rowCards = 3;
+          } else {
+            rowIndex = 2;
+            colIndex = index - 5;
+            rowCards = 2;
+          }
+
+          const leftOffset = rowCards === 2 ? 275 : 45;
+          const left = leftOffset + colIndex * (430 + 30);
           const top = 2080 + rowIndex * 377;
+          
           return (
             <DesktopEventCard 
               key={index} 
@@ -924,15 +949,7 @@ export default function Frame() {
             />
           );
         })}
-        {!HIDE_SPEAKERS && (
-          <SpeakersCoverflow>
-            <Frame8 />
-            <Frame9 />
-            <Frame10 />
-            <Frame11 />
-            <Frame12 />
-          </SpeakersCoverflow>
-        )}
+        {/* SpeakersCoverflow moved to the translating div above */}
       <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ transform: `translateY(${totalOffset}px)`, transition: 'transform 0.5s ease' }}>
         <div className="pointer-events-auto">
           <FAQAccordion />

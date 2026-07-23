@@ -9,6 +9,11 @@ import imgKranthiPoster from "../../imports/Frame1/kranthi-about-poster.jpg";
 import imgRectangle35 from "../../imports/Frame1/eb58194fa5ddc18d5936b5417f313afe61eb4fa6.png";
 import imgEllipse7 from "../../imports/Frame1/1e9d098cb778eb196081c590c4afcc1fe0d6878b.png";
 import { eventCards, EventCardData } from '../data/events';
+import imgChem from "../../assets/events/chem.jpeg";
+import imgCircuitSprint from "../../assets/events/circuit-sprint.jpg";
+import imgCircuitSafari from "../../assets/events/circuit-safari.jpg";
+import imgAlumni from "../../assets/events/alumni.jpg";
+import { speakers } from "../data/speakers";
 import gallery1 from "../../assets/gallery/img1.jpg";
 import gallery2 from "../../assets/gallery/img2.jpg";
 import gallery3 from "../../assets/gallery/img3.jpg";
@@ -289,13 +294,7 @@ function MobileEvents() {
   );
 }
 
-const speakers = [
-  { icon: "\ud83d\udc68\u200d\ud83d\udcbb" },
-  { icon: "\ud83e\udd16" },
-  { icon: "\ud83c\udfa8" },
-  { icon: "\ud83d\udee1\ufe0f" },
-  { icon: "\ud83d\ude80" },
-];
+
 
 function MobileSpeakers() {
   return (
@@ -320,14 +319,18 @@ function MobileSpeakers() {
             }}
           >
             <div
-              className="w-[76px] h-[76px] rounded-full flex items-center justify-center text-[2rem]"
+              className="w-[76px] h-[76px] rounded-full flex items-center justify-center text-[2rem] overflow-hidden"
               style={{ background: "radial-gradient(circle at 35% 30%, rgba(224,41,158,0.9), rgba(54,232,224,0.7))" }}
             >
-              {s.icon}
+              {s.image ? (
+                <img src={s.image} alt={s.name} className="w-full h-full object-cover" />
+              ) : (
+                s.icon
+              )}
             </div>
-            <div className="flex flex-col items-center text-center">
-              <span className="font-['Orbitron',sans-serif] font-extrabold tracking-wide uppercase text-[13px] text-white">NAME</span>
-              <span className="font-['Orbitron',sans-serif] tracking-wide uppercase text-[10px] text-[#36e8e0] mt-1">POSITION</span>
+            <div className="flex flex-col items-center text-center px-2">
+              <span className="font-['Orbitron',sans-serif] font-extrabold tracking-wide uppercase text-[12px] text-white break-words">{s.name || "NAME"}</span>
+              <span className="font-['Orbitron',sans-serif] tracking-wide uppercase text-[9px] text-[#ef8ff6] mt-1 break-words">{s.position || "POSITION"}</span>
             </div>
           </motion.div>
         ))}
@@ -570,7 +573,7 @@ function MobileFooter() {
 }
 
 export default function MobileFrame() {
-  const HIDE_SPEAKERS = true;
+  const HIDE_SPEAKERS = false;
   return (
     <div className="bg-black relative w-full overflow-x-hidden">
       {/* Background art layers, reused from desktop but simplified for mobile */}
