@@ -270,27 +270,35 @@ function MobileSpeakers() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
             whileTap={{ scale: 0.98 }}
-            className="snap-center shrink-0 w-[180px] h-[230px] rounded-[24px] flex flex-col items-center justify-center gap-3"
+            className="snap-center shrink-0 relative w-[180px] flex flex-col items-center justify-start rounded-[24px] overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8),0_0_50px_rgba(54,232,224,0.2)]"
             style={{
-              background: "linear-gradient(160deg, rgba(20,15,40,0.6), rgba(40,20,60,0.6))",
-              backdropFilter: "blur(20px) saturate(160%)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              boxShadow: "0 20px 40px -10px rgba(0,0,0,0.6)",
+              height: '280px',
+              border: '1px solid rgba(255,255,255,0.2)',
+              background: 'linear-gradient(160deg, rgba(35,25,65,0.85), rgba(60,30,90,0.85))',
+              backdropFilter: 'blur(20px) saturate(160%)',
             }}
           >
-            <div
-              className="w-[76px] h-[76px] rounded-full flex items-center justify-center text-[2rem] overflow-hidden"
-              style={{ background: "radial-gradient(circle at 35% 30%, rgba(224,41,158,0.9), rgba(54,232,224,0.7))" }}
+            <div 
+              className="w-full shrink-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
+              style={{ height: '200px' }}
             >
-              {s.image ? (
-                <img src={s.image} alt={s.name} className="w-full h-full object-cover" />
-              ) : (
-                s.icon
-              )}
+              <img 
+                src={s.image} 
+                alt={s.name}
+                className="w-full h-full object-cover object-top pointer-events-none"
+              />
             </div>
-            <div className="flex flex-col items-center text-center px-2">
-              <span className="font-['Orbitron',sans-serif] font-extrabold tracking-wide uppercase text-[12px] text-white break-words">{s.name || "NAME"}</span>
-              <span className="font-['Orbitron',sans-serif] tracking-wide uppercase text-[9px] text-[#ef8ff6] mt-1 break-words">{s.position || "POSITION"}</span>
+
+            <div 
+              className="w-full flex flex-col items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] h-[80px] opacity-100"
+              style={{ background: 'linear-gradient(180deg, rgba(9,9,20,0) 0%, rgba(9,9,20,0.9) 100%)' }}
+            >
+              <span className="font-['Orbitron',sans-serif] font-bold uppercase text-[12px] text-white tracking-[1.5px] mt-1 px-2 text-center line-clamp-1 w-full leading-tight">
+                {s.name}
+              </span>
+              <span className="font-['Orbitron',sans-serif] tracking-[2px] uppercase text-[7px] text-[#ef8ff6] mt-1 px-4 text-center line-clamp-2 leading-snug">
+                {s.position}
+              </span>
             </div>
           </motion.div>
         ))}
