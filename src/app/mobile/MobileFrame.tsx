@@ -13,7 +13,7 @@ import imgChem from "../../assets/events/chem.jpeg";
 import imgCircuitSprint from "../../assets/events/circuit-sprint.jpg";
 import imgCircuitSafari from "../../assets/events/circuit-safari.jpg";
 import imgAlumni from "../../assets/events/alumni.jpg";
-import { eventCards } from "../data/events";
+
 import DesktopEventCard from "../components/DesktopEventCard";
 import { speakers } from "../data/speakers";
 import gallery1 from "../../assets/gallery/img1.jpg";

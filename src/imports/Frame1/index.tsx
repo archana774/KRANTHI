@@ -932,7 +932,7 @@ export default function Frame() {
           } else {
             rowIndex = 2;
             colIndex = index - 5;
-            rowCards = 2;
+            rowCards = 3;
           }
 
           const leftOffset = rowCards === 2 ? 275 : 45;

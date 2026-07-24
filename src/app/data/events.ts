@@ -5,6 +5,7 @@ import imgChem from "../../assets/events/chem.jpeg";
 import imgCircuitSprint from "../../assets/events/circuit-sprint.jpg";
 import imgCircuitSafari from "../../assets/events/circuit-safari.jpg";
 import imgAlumni from "../../assets/events/alumni.jpg";
+import imgCodeRelay from "../../assets/events/code-relay.png";
 
 export interface EventCardData {
   title: string;
@@ -105,5 +106,17 @@ export const eventCards: EventCardData[] = [
     prize: "N/A",
     image: imgAlumni,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSfK5uKcXJqiCx_jbYLN3BDh2k_1E_Hmn6EBztyKHrsw35Pmsg/viewform?usp=publish-editor",
+  },
+  {
+    title: "CODE RELAY",
+    sub: "-BY CSE FORUM",
+    desc: "A relay-style programming challenge testing your logic and speed.",
+    date: "27th July 2026",
+    time: "4:30 pm",
+    venue: "Annexe 102A",
+    fee: "Free (GECTians) | ₹30 (Others)",
+    prize: "₹1,500",
+    image: imgCodeRelay,
+    link: "https://forms.gle/zAbjMftysbkSmHtRA",
   }
 ];
