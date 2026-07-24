@@ -6,6 +6,7 @@ import imgCircuitSprint from "../../assets/events/circuit-sprint.jpg";
 import imgCircuitSafari from "../../assets/events/circuit-safari.jpg";
 import imgAlumni from "../../assets/events/alumni.jpg";
 import imgCodeRelay from "../../assets/events/code-relay.png";
+import imgVertexa from "../../assets/events/vertexa.jpg";
 
 export interface EventCardData {
   title: string;
@@ -118,5 +119,17 @@ export const eventCards: EventCardData[] = [
     prize: "₹1,500",
     image: imgCodeRelay,
     link: "https://forms.gle/zAbjMftysbkSmHtRA",
+  },
+  {
+    title: "VERTEXA",
+    sub: "-BY MECH FORUM",
+    desc: "THINK. ARGUE. DESIGN. BUILD. Debate & Design Dilemma.",
+    date: "27th & 28th July",
+    time: "4:30 pm",
+    venue: "105, ME Dept / 109, Main",
+    fee: "Free (GECTians) | ₹30 (Others)",
+    prize: "₹1,500",
+    image: imgVertexa,
+    link: "https://forms.gle/hsAiwaDmk4vUYUa28",
   }
 ];
