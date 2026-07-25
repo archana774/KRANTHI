@@ -7,6 +7,7 @@ import imgCircuitSafari from "../../assets/events/circuit-safari.jpg";
 import imgAlumni from "../../assets/events/alumni.jpg";
 import imgCodeRelay from "../../assets/events/code-relay.png";
 import imgVertexa from "../../assets/events/vertexa.jpg";
+import imgArchathon from "../../assets/events/archathon.jpg";
 
 export interface EventCardData {
   title: string;
@@ -131,5 +132,17 @@ export const eventCards: EventCardData[] = [
     prize: "₹1,500",
     image: imgVertexa,
     link: "https://forms.gle/hsAiwaDmk4vUYUa28",
+  },
+  {
+    title: "ARCHATHON",
+    sub: "-BY ARCH FORUM",
+    desc: "A creative architectural marathon to test your design thinking and endurance.",
+    date: "August 1, 2026",
+    time: "TBA",
+    venue: "TBA",
+    fee: "₹150 (GECTians) | ₹300 (Others)",
+    prize: "₹7,000",
+    image: imgArchathon,
+    link: "https://forms.gle/KNPt7VaftuN2CHT16",
   }
 ];
