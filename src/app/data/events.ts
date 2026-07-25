@@ -27,7 +27,7 @@ export const eventCards: EventCardData[] = [
   {
     title: "JURASSIC SPARKS",
     sub: "-BY ECE FORUM",
-    desc: "Think fast. Build smart. Jurassic Sparks is an exciting circuit challenge to showcase your technical skills!",
+    desc: "Test your circuit design skills in this exciting technical challenge!",
     date: "July 20, 2026",
     time: "TBA",
     venue: "ECE Department",
@@ -40,7 +40,7 @@ export const eventCards: EventCardData[] = [
   {
     title: "BREAKING CODE",
     sub: "-BY CSE X CHE FORUM",
-    desc: "Crack the logic and solve complex puzzles. A coding competition designed to test your algorithmic problem-solving.",
+    desc: "Coding challenge to test your logic and problem-solving skills.",
     date: "July 21, 2026",
     time: "4:30 PM",
     venue: "Annexe 102A",
@@ -52,7 +52,7 @@ export const eventCards: EventCardData[] = [
   {
     title: "BID TO BUILD",
     sub: "-BY CIVIL FORUM",
-    desc: "Put your estimation skills to the test. Compete to build the most efficient structure with limited resources.",
+    desc: "Build the most efficient structure with limited resources.",
     date: "July 21, 2026",
     time: "4:30 PM",
     venue: "Classroom C6",
@@ -64,7 +64,7 @@ export const eventCards: EventCardData[] = [
   {
     title: "DISTILL & CONQUER",
     sub: "-BY CHEMICAL FORUM",
-    desc: "Dive into chemical mysteries. A thrilling competition challenging your knowledge in chemical processes and logic.",
+    desc: "Solve chemical mysteries using logic and science.",
     date: "July 22, 2026",
     time: "4:30 PM",
     venue: "Venue TBA",
