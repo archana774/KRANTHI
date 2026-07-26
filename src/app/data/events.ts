@@ -8,6 +8,7 @@ import imgAlumni from "../../assets/events/alumni.jpg";
 import imgCodeRelay from "../../assets/events/code-relay.png";
 import imgVertexa from "../../assets/events/vertexa.jpg";
 import imgArchathon from "../../assets/events/archathon.jpg";
+import imgFixItFever from "../../assets/events/fix-it-fever.jpg";
 
 export interface EventCardData {
   title: string;
@@ -29,7 +30,7 @@ export const eventCards: EventCardData[] = [
     sub: "-BY ECE FORUM",
     desc: "Test your circuit design skills in this exciting technical challenge!",
     date: "July 20, 2026",
-    time: "TBA",
+    time: "4:30 PM",
     venue: "ECE Department",
     teamSize: undefined,
     fee: "Free Registration",
@@ -57,7 +58,7 @@ export const eventCards: EventCardData[] = [
     time: "4:30 PM",
     venue: "Classroom C6",
     fee: "Free (GECTians) | ₹30 (Others)",
-    prize: "TBA",
+    prize: "1,500",
     image: imgBidToBuild,
     link: "https://docs.google.com/forms/d/e/1FAIpQLSdxI-0bHepIEL_oORglxVc8ol6qX-Reko6_oz6A--CJavNbzw/viewform?usp=header",
   },
@@ -144,5 +145,17 @@ export const eventCards: EventCardData[] = [
     prize: "₹7,000",
     image: imgArchathon,
     link: "https://forms.gle/KNPt7VaftuN2CHT16",
+  },
+  {
+    title: "FIX IT FEVER",
+    sub: "-BY PE FORUM",
+    desc: "A hands-on troubleshooting and problem-solving contest.",
+    date: "July 28 2026",
+    time: "4:30 pm",
+    venue: "Drawing Hall PE Dept",
+    fee: "Free (GECTians) | ₹30 (Others)",
+    prize: "₹1,000",
+    image: imgFixItFever,
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSdSpVy3hv5u9psCzhycTeZ5rvfRPeJeswpHhD_SkrHioHUA3Q/viewform?usp=publish-editor",
   }
 ];

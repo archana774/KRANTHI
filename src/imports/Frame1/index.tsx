@@ -925,18 +925,10 @@ export default function Frame() {
             rowIndex = 0;
             colIndex = index;
             rowCards = 2;
-          } else if (index < 5) {
-            rowIndex = 1;
-            colIndex = index - 2;
-            rowCards = 3;
-          } else if (index < 8) {
-            rowIndex = 2;
-            colIndex = index - 5;
-            rowCards = 3;
           } else {
-            rowIndex = 3;
-            colIndex = index - 8;
-            rowCards = 2;
+            rowIndex = Math.floor((index - 2) / 3) + 1;
+            colIndex = (index - 2) % 3;
+            rowCards = 3;
           }
 
           const leftOffset = rowCards === 2 ? 275 : 45;
